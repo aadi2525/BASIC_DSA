@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "random": "cpp",
+        "type_traits": "cpp",
+        "array": "cpp",
+        "string": "cpp"
+    },
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingDelete": "always",
+    "files.autoGuessEncoding": true,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "C_Cpp.autocomplete": "default",
+    "C_Cpp.autocompleteAddParentheses": true,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.inlineSuggest.suppressSuggestions": true
+}
