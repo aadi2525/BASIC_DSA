@@ -9,34 +9,59 @@
 
 #include<iostream>
 using namespace std;
+ // not correct method
+// int solve(int n){
+//    int sum=0;     //sum
+//    while(n!=0){       
+//    int x=n%10;  ///it gives last number
+//    sum+=x*x;  
+//   n=n/10;  //it cuts the last digit.
+//    }
 
-int solve(int n){
-   int sum=0;     //sum
-   while(n!=0){       
-   int x=n%10;  ///it gives last number
-   sum+=x*x;  
-  n=n/10;  //it cuts the last digit.
-   }
+//    return sum;
+// }
 
-   return sum;
-}
+// bool check(int n){
+//     if(n==1){
+//         return true;
+//     }else if(n==4){
+//         return false;
+//     }else{
+//         return check(solve(n));
+//     }
+// }
 
-bool check(int n){
-    if(n==1){
-        return true;
-    }else if(n==4){
-        return false;
-    }else{
-        return check(solve(n));
+
+    // Used 1 or 4 logic; Can also keep a track of sums to avoid loops by using hashmaps
+
+    // To calculate the sum of digits
+    int digits_sum(int num){
+        int dig = 0;
+        while(num>0){
+            dig += (num%10)*(num%10);
+            num = num/10;
+        }
+        return dig;
     }
-}
+
+    bool isHappy(int n) {
+        // int sum = n;
+        
+        while(n!=1){
+            n = digits_sum(n);
+            if(n == 1)   return true;
+            else if(n == 4)   return false;
+        }
+        return true;
+    };
+
 
 int main(){
 
-    int n =7;
-solve(n);
-   cout<< check(n);
-   if(check(n)==true){
+    int n =2;
+digits_sum(n);
+   cout<< isHappy(n);
+   if(isHappy(n)==true){
     cout<<" true"<<endl;
    }else{
     cout<<" false"<<endl;
